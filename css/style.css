@@ -25,6 +25,7 @@ body {
 
 .img {
   background-image: url(../assets/Image.jpg);
+  background-size: contain;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
