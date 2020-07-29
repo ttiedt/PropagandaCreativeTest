@@ -83,4 +83,9 @@ body {
 h1 {
   color: black;
 }
+
+.inverted {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
 /*# sourceMappingURL=style.css.map */
