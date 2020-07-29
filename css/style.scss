@@ -1,44 +1,64 @@
 $mainColor: rgb(255, 255, 255);
-$secondColor: rgb(65, 65, 65);
+$secondColor: rgb(112,112,112);
 $thirdColor: rgb(0, 0, 0);
-$font: Arial, Helvetica, sans-serif;
+$font: Helvetica;
 $breakpoint-tablet: 768px;
 @media (min-width: $breakpoint-tablet) {
   // in here is for the desktop view
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 50px 50px 50px 50px 50px 50px ;
-  //   grid-template-areas: 
-  //     "blk-btn . nav nav picture picture picture"
-  //     "p p p . picture picture picture"
-  //     "d d d . picture picture picture"
-  //     "invert invert . . picture picture picture"
-  //     ". . h1 h1 picture picture picture"
-  //     ". . . . picture picture picture";
+    grid-template-rows: 10% auto auto auto auto 20% 10%;
+  }
+
+  .blk-box {
+    grid-area: 1 / 1 / 1 / 1;
+    height: 25px;
+    width: 50%;
+    background-color: $thirdColor;
   }
 
   .nav {
     display: none;
   }
 
-  .blk-box {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 1;
-    grid-row-end: 1;
+  #nav-links {
+    display: block;
+    grid-area: 1 / 2 / 1 / 4;
+    justify-self: end;
   }
 
-  .img {
-    grid-column-start: 4;
-    grid-column-end: 8;
-    grid-row-start: 1;
-    grid-row-end: 7;
+  #nav-links a {
+    padding-right: 25px;
   }
 
   h1 {
-    display: none;
+    position: relative;
+    grid-area: 4 / 3 / 6 / 5;
   }
+
+  .img {
+    grid-area: 1 / 4 / 8 / 8;
+  }
+
+  .lorem {
+    grid-area: 2 / 1 / 4 / 3;
+  }
+
+  .dates {
+    grid-area: 4/ 1 / 6 / 1;
+  }
+
+  .btn {
+    grid-area: 6/ 1 / 7/ 1;
+    background-color: $mainColor;
+    color: $secondColor;
+    border: 1px solid $secondColor;
+    border-radius: 25px;
+    height: 25px;
+    padding: 50px;
+  }
+
 }
 @media (max-width: $breakpoint-tablet) {
   // in here is mobile view
@@ -46,6 +66,13 @@ $breakpoint-tablet: 768px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 20px 1fr;
+  }
+
+  .blk-box {
+    grid-column-start: 2;
+    justify-self: end;
+    width: 75%;
+    height: 100%;
   }
 
   .nav {
@@ -67,13 +94,22 @@ $breakpoint-tablet: 768px;
   .img {
     height: 200px;
   }
+
+  .btn {
+    width: 100%;
+    background-color: $thirdColor;
+    color: $mainColor;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 
 html {
   background-color: $mainColor;
   color: $secondColor;
-  font: $font;
+  font-family: $font;
 }
 
 body {
@@ -82,6 +118,11 @@ body {
 
 .container{
   margin: 15px;
+}
+
+.blk-box {
+  background-color: $thirdColor;
+  border-radius: 25px;
 }
 
 .nav {
@@ -93,21 +134,16 @@ body {
   text-decoration: none;
 }
 
-.blk-box {
-  grid-column-start: 2;
-  justify-self: end;
-  background-color: $thirdColor;
-  width: 75%;
-  height: 100%;
-  border-radius: 25px;
+h1 {
+  color: $thirdColor;
 }
 
 .img {
   background-image: url(../assets/Image.jpg);
   background-position: center;
   background-size: cover;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   width: 100%;
 }
 
@@ -116,19 +152,9 @@ body {
 }
 
 .btn {
-  width: 100%;
-  background-color: $thirdColor;
-  color: $mainColor;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-
-h1 {
-  color: $thirdColor;
 }
 
 .inverted {
