@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body onload="dateParser()">
   <div class="container">
     <div class="nav-container">
       <div class="blk-box"></div>
@@ -29,7 +29,7 @@
       praesentium dolorem cum blanditiis deleniti fuga, repudiandae
       officia nulla distinctio aut, at explicabo numquam nisi cumque
       porro tempora reprehenderit repellat ab.</p>
-    <div class="dates">
+    <div class="dates" id="dates">
       <p>1/12/19</p>
       <p>Feb 12 2019</p>
       <p>February 12 2019</p>
@@ -37,11 +37,12 @@
       <p>1/12/19</p>
       <p>2-12/19</p>
     </div>
+    <div class="btn" id="invert">
+      Invert Button
+    </div>
   </div>
-  <div class="btn">
-    Invert Button
-  </div>
+
 </body>
 <script type="text/javascript" src="scripts/dropdownnav.js"></script>
-
+<script type="text/javascript" src="scripts/dates.js"></script>
 </html>

@@ -64,6 +64,10 @@ body {
   height: 200px;
 }
 
+.dates {
+  padding-bottom: 25px;
+}
+
 .btn {
   width: 100%;
   background-color: black;
@@ -71,9 +75,9 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-  display: inline-block;
   position: fixed;
   bottom: 0;
+  right: 0;
 }
 
 h1 {
