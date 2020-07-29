@@ -1,8 +1,10 @@
+// This function parses the dates and formates date to MM/DD/YYYY
 function dateParser(){
-  // console.log(document.getElementById("dates").textContent);
+  // gets the date div
   var x = document.getElementById("dates");
+  // gets the child elements
   var child = x.children;
-  // console.log(x.children.length);
+  // Loops over the child elements and formates the date correctly.
   for (var i = 0; i <child.length; i++){
     // console.log(i + " " + new Date(child[i].textContent));
     var date = new Date(child[i].textContent);
@@ -11,7 +13,7 @@ function dateParser(){
     var day = date.getDate();
     day = day > 10 ? day : '0' + day;
     var year = date.getFullYear();
-    console.log(month + "/" + day + "/" + year);
+    // console.log(month + "/" + day + "/" + year);
     child[i].innerHTML = month + "/" + day + "/" + year
   }
 }
