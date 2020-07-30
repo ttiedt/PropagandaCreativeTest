@@ -1,21 +1,23 @@
-$mainColor: rgb(255, 255, 255);
-$secondColor: rgb(112,112,112);
-$thirdColor: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+$grey: rgb(112,112,112);
+$black: rgb(0, 0, 0);
 $font: Helvetica;
-$breakpoint-tablet: 768px;
-@media (min-width: $breakpoint-tablet) {
+$breakpoint: 768px;
+@media (min-width: $breakpoint) {
   // in here is for the desktop view
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 10% auto auto auto auto 20% 10%;
+    grid-template-rows: 2rem 5rem 10rem 10rem 5rem 10rem 2rem;
+    // grid-template-rows: 10% auto auto auto auto 20% 10%;
+
   }
 
   .blk-box {
     grid-area: 1 / 1 / 1 / 1;
     height: 25px;
     width: 50%;
-    background-color: $thirdColor;
+    background-color: $black;
   }
 
   .nav {
@@ -26,6 +28,7 @@ $breakpoint-tablet: 768px;
     display: block;
     grid-area: 1 / 2 / 1 / 4;
     justify-self: end;
+    white-space: nowrap;
   }
 
   #nav-links a {
@@ -33,12 +36,16 @@ $breakpoint-tablet: 768px;
   }
 
   h1 {
-    position: relative;
-    grid-area: 4 / 3 / 6 / 5;
+    grid-area: 5 / 3 / 7 / 5;
+    font-size: 5rem;
+    font-style: italic;
+    place-self: end stretch;
+    margin: 0;
   }
 
   .img {
-    grid-area: 1 / 4 / 8 / 8;
+    grid-area: 1 / 4 / 9 / 8;
+    z-index: -1;
   }
 
   .lorem {
@@ -50,17 +57,17 @@ $breakpoint-tablet: 768px;
   }
 
   .btn {
-    grid-area: 6/ 1 / 7/ 1;
-    background-color: $mainColor;
-    color: $secondColor;
-    border: 1px solid $secondColor;
+    grid-area: 6/ 1 / 6/ 1;
+    place-self: start stretch;
+    background-color: $white;
+    color: $grey;
+    border: 1px solid $grey;
     border-radius: 25px;
     height: 25px;
     padding: 50px;
   }
-
 }
-@media (max-width: $breakpoint-tablet) {
+@media (max-width: $breakpoint) {
   // in here is mobile view
   .nav-container {
     display: grid;
@@ -80,6 +87,16 @@ $breakpoint-tablet: 768px;
     grid-row-start: 1;
   }
 
+  .nav .line {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background-color: $black;
+    border-radius: 5px;
+  }
+
   #nav-links {
     grid-column-start: 1;
     grid-row-start: 2;
@@ -95,10 +112,14 @@ $breakpoint-tablet: 768px;
     height: 200px;
   }
 
+  .lorem, .dates {
+    color: $black;
+  }
+
   .btn {
     width: 100%;
-    background-color: $thirdColor;
-    color: $mainColor;
+    background-color: $black;
+    color: $white;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -107,13 +128,9 @@ $breakpoint-tablet: 768px;
 
 
 html {
-  background-color: $mainColor;
-  color: $secondColor;
+  background-color: $white;
+  color: $grey;
   font-family: $font;
-}
-
-body {
-  margin: 0;
 }
 
 .container{
@@ -121,29 +138,27 @@ body {
 }
 
 .blk-box {
-  background-color: $thirdColor;
+  background-color: $black;
   border-radius: 25px;
 }
 
 .nav {
-  color: $thirdColor;
+  color: $black;
 }
 
 #nav-links a {
-  color: $secondColor;
+  color: $grey;
   text-decoration: none;
 }
 
 h1 {
-  color: $thirdColor;
+  color: $black;
 }
 
 .img {
   background-image: url(../assets/Image.jpg);
   background-position: center;
   background-size: cover;
-  // margin-left: auto;
-  // margin-right: auto;
   width: 100%;
 }
 
@@ -155,6 +170,8 @@ h1 {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .inverted {
