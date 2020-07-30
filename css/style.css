@@ -75,6 +75,40 @@
     height: 25px;
     padding: 50px;
   }
+  .visted {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 6;
+    -ms-grid-column-span: 2;
+    grid-area: 2 / 6 / 4/ 8;
+    background-color: white;
+    color: black;
+    padding: 15px;
+    display: none;
+  }
+  .close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #707070;
+  }
+  .close:before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .close:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
 }
 
 @media (max-width: 768px) {
