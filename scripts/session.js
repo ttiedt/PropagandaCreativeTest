@@ -1,7 +1,13 @@
 // This function check to see if the user has
 // visted this site during the current session.
 // If so, then display the "we missed you" card.
+
+// if user closed out of the card
+var isClosed = false;
+
 window.addEventListener("load", function () {
+  // if user hasnt closed out of the card.
+  if (!isClosed) {
     // get value of timesVisted
     var timesVisted = sessionStorage.getItem("timesVisted");
     // is null?
@@ -21,20 +27,31 @@ window.addEventListener("load", function () {
       // set visted div display to block.
       document.getElementById("visted").style.display = "block";
     }
-  });
+  }
+});
 // Check whether to display card on resize event.
 window.addEventListener("resize", function () {
-  timesVisted = sessionStorage.getItem("timesVisted");
-  // Check to if screen size is smaller then the break point.
-  if (window.innerWidth <= 768) {
-    // if so dont display the card
-    document.getElementById("visted").style.display = "none";
-    // document.getElementsByTagName("h1")[0].innerHTML = "none - " + window.innerWidth;
-  } else if (timesVisted > 1) {
-    // else display the card.
-    // you need the second 'if'. If the screen is resized on 
-    // first visit you still dont want the card displayed.
-    document.getElementById("visted").style.display = "block";
-    // document.getElementsByTagName("h1")[0].innerHTML = "block - " + window.innerWidth;
+  // if user hasnt closed out of the card.
+  if (!isClosed) {
+    timesVisted = sessionStorage.getItem("timesVisted");
+    // Check to if screen size is smaller then the break point.
+    if (window.innerWidth <= 768) {
+      // if so dont display the card
+      document.getElementById("visted").style.display = "none";
+      // document.getElementsByTagName("h1")[0].innerHTML = "none - " + window.innerWidth;
+    } else if (timesVisted > 1) {
+      // else display the card.
+      // you need the second 'if'. If the screen is resized on 
+      // first visit you still dont want the card displayed.
+      document.getElementById("visted").style.display = "block";
+      // document.getElementsByTagName("h1")[0].innerHTML = "block - " + window.innerWidth;
+    }
   }
+});
+
+// Click on the close
+document.addEventListener("click", function() {
+  document.getElementById("visted").style.display = "none";
+  // Make sure the card wont pop up again.
+  isClosed = true;
 });
