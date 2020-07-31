@@ -1,5 +1,5 @@
 // This function parses the dates and formates date to MM/DD/YYYY
-function dateParser(){
+window.addEventListener('DOMContentLoaded', function (){
   // gets the date div
   var x = document.getElementById("dates");
   // gets the child elements
@@ -16,4 +16,4 @@ function dateParser(){
     // console.log(month + "/" + day + "/" + year);
     child[i].innerHTML = month + "/" + day + "/" + year
   }
-}
+});

@@ -74,16 +74,13 @@ $breakpoint: 768px;
     display: none;
   }
   .close {
-    position: absolute;
-    right: 32px;
-    top: 32px;
+    margin-left: 13px;
     width: 32px;
     height: 32px;
   }
   .close:before, .close:after {
     position: absolute;
-    left: 15px;
-    content: ' ';
+    content: " ";
     height: 33px;
     width: 2px;
     background-color: $grey;
@@ -152,6 +149,9 @@ $breakpoint: 768px;
     bottom: 0;
     right: 0;
   }
+  .visted {
+    display: none;
+  }
 }
 
 
@@ -200,6 +200,10 @@ h1 {
   text-align: center;
   cursor: pointer;
   white-space: nowrap;
+}
+
+.visted {
+  overflow: hidden;
 }
 
 .inverted {
