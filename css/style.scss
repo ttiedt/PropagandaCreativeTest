@@ -1,8 +1,19 @@
+// Tyler Tiedt
+// Propaganda Creative Frontend Test
+// Style.scss
+
+// ============================================================
+// |                     Global Variables                     |
+// ============================================================
 $white: rgb(255, 255, 255);
 $grey: rgb(112,112,112);
 $black: rgb(0, 0, 0);
 $font: Helvetica;
 $breakpoint: 768px;
+
+// ============================================================
+// |                      Desk Top View                       |
+// ============================================================
 @media (min-width: $breakpoint) {
   // in here is for the desktop view
   .container {
@@ -73,11 +84,13 @@ $breakpoint: 768px;
     padding: 15px;
     display: none;
   }
+
   .close {
     margin-left: 13px;
     width: 32px;
     height: 32px;
   }
+
   .close:before, .close:after {
     position: absolute;
     content: " ";
@@ -85,13 +98,19 @@ $breakpoint: 768px;
     width: 2px;
     background-color: $grey;
   }
+
   .close:before {
     transform: rotate(45deg);
   }
+
   .close:after {
     transform: rotate(-45deg);
   }
 }
+
+// ============================================================
+// |                     Mobile Top View                      |
+// ============================================================
 @media (max-width: $breakpoint) {
   // in here is mobile view
   .nav-container {
@@ -154,6 +173,9 @@ $breakpoint: 768px;
   }
 }
 
+// ============================================================
+// |                     General Styling                      |
+// ============================================================
 
 html {
   background-color: $white;
